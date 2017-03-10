@@ -34,4 +34,11 @@ void gts_write_triangle (GtsTriangle * t, GtsPoint * o, FILE * fptr);
 void gts_write_segment (GtsSegment * s, GtsPoint * o, FILE * fptr);
 #endif /* DEBUG_FUNCTIONS */
 
+#define g_list_free_full(list, free_func) \
+{ \
+  g_list_foreach (list, (GFunc) free_func, NULL); \
+  g_list_free (list); \
+}
+
+
 #endif /* __GTS_PRIVATE_H__ */
